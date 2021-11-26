@@ -1,0 +1,21 @@
+.storage-container{
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 3px;
+}
+.bar-status{
+    text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.indicator{
+    background-color: #04AA6D
+}
+.memory-text{
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-top: 5px;
+}
