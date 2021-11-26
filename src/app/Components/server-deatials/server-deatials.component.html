@@ -6,7 +6,11 @@
                 <label for="server-plan">Plan</label>
             </div>
             <div class="col-details memory-bar"><app-storage-indicator [usedStorage]="serverDetails.usedStorage" [totalStorage]="serverDetails.storage" [id]="serverDetails.id"></app-storage-indicator></div>
-            <div class="col-details">{{serverDetails.montlyVisitor}}/{{serverDetails.monthlyVisitorCapacity}}</div>
+            <div class="col-details">{{serverDetails.montlyVisitor}}/{{serverDetails.monthlyVisitorCapacity}} 
+                <div>
+                    <app-user-bar [monthlyVisitor]="serverDetails.montlyVisitor" [monthlyVisitorCapacity]="serverDetails.monthlyVisitorCapacity"></app-user-bar>
+                </div>
+            </div>
             <div class="col-details">{{serverDetails.usedDomains}}/{{serverDetails.availableDomains}} </div>
             <div class="col-details"><app-server-status [status]="serverDetails.status"></app-server-status></div>
         </div>
