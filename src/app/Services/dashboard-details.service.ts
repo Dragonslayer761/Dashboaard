@@ -13,4 +13,14 @@ export class DashboardDetailsService {
   getServerDetails(){
     return this.http.get<any>(this.configUrl);
   }
+  addServerDetails(body:any){
+    this.http.post<any>(this.configUrl,body).subscribe(data=>{
+      next:(data:any)=>{
+        console.log(data)
+      }
+      error:(error:any)=>{
+        console.error(error)
+      }
+    })
+  }
 }

@@ -1,5 +1,6 @@
 .contianer{
     display: flex;
+    flex-basis: 1;
 
 }
 .col{
@@ -7,10 +8,51 @@
 }
 .side-pannel{
     background-color: #5B7CFD;
-    height: 100vh;
-
+    //height: 100vh;
    flex-grow: 1;
     border-radius: 3px 0 0px 3px;
+    //vertical-align: center;
+    
+}
+.pic-container{
+    width: 200px;
+    height: 200px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.side-menu{
+    list-style-type: none;
+    vertical-align: middle;
+    padding: 0;
+}
+.name{
+    font-size: 30px;
+    font-family: sans-serif;
+    color: #e3e5e8;
+}
+.email{
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: bolder;
+    color: whitesmoke;
+    margin-top: 10px;
+}
+.nameEmail{
+    padding-left: 70px;
+    margin-top: 15px;
+}
+.active{
+    background-color:#1745fd ;
+    color: rgb(255, 255, 255) !important;
+}
+.menu-item{
+    padding: 15px 0 15px 80px;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #e3e5e8;
 }
 .main-pannel{
     background-color: #E7EEF7;
@@ -24,6 +66,7 @@
     font-family: sans-serif;
     font-weight: bold;
     display: flex;
+    margin-bottom: 30px;
 }
 .header-title{
     width: 65%;
@@ -85,8 +128,8 @@
 }
 .show-modal{
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 0%;
+    left: 27%;
     z-index: 20000;
 }
 .modal-backdrop{

@@ -43,4 +43,9 @@ export class AppComponent {
   }
   console.log(this.showModal)
   }
+  sendDataToserver(event:any){
+    event['id']=this.serverDetails.length+1
+    
+    this.dash.addServerDetails(event)
+  }
 }

@@ -1,22 +1,29 @@
-<div class="add-server">
-    <div class="add-server-header">
-        <label class="header-label" for="">Add Domain Details</label>
-        <button class="close-button">X</button>
-    </div>
-    <div class="add-server-body">
-        <label for="">Domain Name *</label>
-    <input [(ngModel)]="server.domain" type="text" name="" id="">
-    <label for="">Storage*</label>
-    <input [(ngModel)]="server.storage" type="text" name="" id="">
-    <label for="">Monthly Visitor*</label>
-    <input [(ngModel)]="server.monthlyVisitorCapacity" type="text" name="" id="">
-    <label for="">Sub Domain</label>
-    <input [(ngModel)]="server.monthlyVisitorCapacity" type="text" name="" id="">
-    <button>x</button>
-    <button>Add More</button>
-    </div>
-    <div class="add-server-footer">
-        <button class="close-btn">Close</button>
-        <button class="save-btn">Save Changes</button>
+<div class="vertically-centered">
+    <div class="add-server">
+        <div class="add-server-header">
+            <label class="header-label" for="">Add Domain Details</label>
+            <button class="close-button">X</button>
+        </div>
+        <div class="add-server-body">
+            <label for="">Domain Name *</label>
+        <input (input)="enterName($event)" type="text" name="" id="" >
+        <label for="">Storage*</label>
+        <input (input)="enterStorage($event)" type="text" name="" id="" >
+        <label for="">Monthly Visitor*</label>
+        <input (input)="enterVisitor($event)" type="text" name="" id="" >
+        <label for="">Sub Domain</label>
+        <div *ngIf="show" >
+            <div *ngFor="let name of subDomain;let i = index">
+                <input (input)="subDomain[i]" type="text" name="" id="">
+            </div>
+            
+        </div>
+        <button (click)="deleteSubDomain()">x</button>
+        <button (click)="addSubDomain()">Add More</button>
+        </div>
+        <div class="add-server-footer">
+            <button class="close-btn">Close</button>
+            <button class="save-btn" (click)=" sendDataToServer()">Save Changes</button>
+        </div>
     </div>
 </div>

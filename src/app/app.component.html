@@ -1,6 +1,22 @@
 <div class="contianer">
   <div class="side-pannel col">
+    <div>
+      <div class="pic-container">
 
+      </div>
+      <div class="nameEmail">
+        <label class="name" for="name">John Doe</label><br>
+      <label class="email" for="email">email@email.com</label>
+      </div>
+    </div>
+      <ul class="side-menu">
+        <li class="menu-item">Dashboard</li>
+        <li  class="menu-item active">Site Details</li>
+        <li  class="menu-item">Migrations</li>
+        <li  class="menu-item">Backups</li>
+        <li  class="menu-item">Support Tickets</li>
+        <li  class="menu-item"> Open New Tickets</li>
+      </ul>
   </div>
   <div class="main-pannel col">
     <div class="dash-header">
@@ -40,7 +56,7 @@
   </div>
 </div>
 <div *ngIf="showModal" class="show-modal">
-  <app-add-modal></app-add-modal>
+  <app-add-modal (sendData)="sendDataToserver($event)"></app-add-modal>
 </div>
 <div class="modal-backdrop" *ngIf="showModal">
 
