@@ -1,0 +1,28 @@
+<div>
+    <div class="detail-container">
+        <div class="header">
+            <div class="col-details domain-name">
+                <label for="server-name">{{serverDetails.domain}}</label><br>
+                <label for="server-plan">Plan</label>
+            </div>
+            <div class="col-details memory-bar"><app-storage-indicator [usedStorage]="serverDetails.usedStorage" [totalStorage]="serverDetails.storage" [id]="serverDetails.id"></app-storage-indicator></div>
+            <div class="col-details">{{serverDetails.montlyVisitor}}/{{serverDetails.monthlyVisitorCapacity}}</div>
+            <div class="col-details">{{serverDetails.usedDomains}}/{{serverDetails.availableDomains}} </div>
+            <div class="col-details"><app-server-status [status]="serverDetails.status"></app-server-status></div>
+        </div>
+    </div>
+    <div class="subdomain" *ngIf="serverDetails.subdomain.length>0">
+        <div class="subdomain-list" *ngFor="let i of serverDetails.subdomain">
+            
+            <table style="width:100%">
+                <tr>
+                    <td style="width: 35%;overflow-wrap: break-word;"><span>{{i.name}}</span></td>
+                    <td><span>{{i.usedStorage}}</span></td>
+                    <td>{{i.montlyVisitor}}</td>
+                    <td><app-server-status [status]="i.domainTag"></app-server-status></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+</div>
