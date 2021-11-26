@@ -5,7 +5,7 @@
   <div class="main-pannel col">
     <div class="dash-header">
       <div class="header-title">Site Details</div>
-      <button class="addSite-btn">+Add New Site</button>
+      <button class="addSite-btn" (click)="addServer($event)">+Add New Site</button>
     </div>
     <div class="search-bar-container">
       <div class="total-entries">
@@ -38,4 +38,10 @@
         </div>
     </div>
   </div>
+</div>
+<div *ngIf="showModal" class="show-modal">
+  <app-add-modal></app-add-modal>
+</div>
+<div class="modal-backdrop" *ngIf="showModal">
+
 </div>

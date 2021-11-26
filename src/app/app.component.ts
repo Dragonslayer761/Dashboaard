@@ -11,6 +11,7 @@ export class AppComponent {
   serverDetails:any;
   filteredList:any;
   entryValue:any = 10;
+  showModal:boolean =false;
   constructor(private dash:DashboardDetailsService){}
   ngOnInit(){
     this.getAllDetails();
@@ -29,9 +30,17 @@ export class AppComponent {
   getEntries(event:any){
     console.log(event.target.value)
     let value = event.target.value
-    if(value<this.serverDetails.length){
+    if(value <= this.serverDetails.length){
       this.filteredList = this.serverDetails.slice(0,value)
       console.log(this.filteredList)
     }   
+  }
+  addServer(event:any){
+  if(this.showModal){
+    this.showModal=false;
+  }else{
+    this.showModal=true;
+  }
+  console.log(this.showModal)
   }
 }

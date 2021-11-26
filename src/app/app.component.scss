@@ -15,7 +15,7 @@
 .main-pannel{
     background-color: #E7EEF7;
 
-    height: 100vh;
+    min-height: 100vh;
     flex-grow: 2;
     padding: 60px;
 }
@@ -82,4 +82,21 @@
 .search-bar{
     float: right;
     
+}
+.show-modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 20000;
+}
+.modal-backdrop{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+    opacity: .5;
+    z-index: 1071;
 }

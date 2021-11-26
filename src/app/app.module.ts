@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { ServerDeatialsComponent } from './Components/server-deatials/server-deatials.component';
 import { StorageIndicatorComponent } from './Components/storage-indicator/storage-indicator.component';
 import { ServerStatusComponent } from './Components/server-status/server-status.component';
-
+import { UserBarComponent } from './Components/user-bar/user-bar.component';
+import { AddModalComponent } from './Components/add-modal/add-modal.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     ServerDeatialsComponent,
     StorageIndicatorComponent,
-    ServerStatusComponent
+    ServerStatusComponent,
+    UserBarComponent,
+    AddModalComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, HttpClientModule,
+    AppRoutingModule, HttpClientModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
