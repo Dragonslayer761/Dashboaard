@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
-
+import databaseData from './db'
+import { of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardDetailsService {
-
+  dbVar = databaseData;
   constructor(private http: HttpClient) { }
   configUrl:string = "http://localhost:3000/db";
   getServerDetails(){
-    return this.http.get<any>(this.configUrl);
+    return of(databaseData);
   }
   addServerDetails(body:any){
     this.http.post<any>(this.configUrl,body).subscribe(data=>{
